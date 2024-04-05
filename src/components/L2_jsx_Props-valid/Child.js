@@ -40,4 +40,8 @@ Child.propTypes = {
     decrement: propTypes.func,
 }
 
+Child.defaultProps = {
+    count: 100
+}
+
 export default Child
