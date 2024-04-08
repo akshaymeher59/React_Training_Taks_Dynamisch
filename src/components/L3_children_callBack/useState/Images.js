@@ -14,18 +14,23 @@ const LogoArr = [logo1, logo2, logo3, logo4];
 
 function Images({ data, setData }) {
     const [image, setImage] = useState(img1);
-
     const [logo, setLogo] = useState(logo1);
     // const [tag, setTag] = useState(<h1>Heading</h1>);
-
+    let myCount = 100;
+    console.log("Level1", count);
+    console.log("Level1 myCount", myCount);
     function ChangeImage() {
         count++;
+        myCount++;
         if (count <= 2) {
             setImage(ImageArr[count])
         } else {
             count = 0;
         }
     }
+    console.log("Level2", count);
+    console.log("Level2 myCount", myCount);
+
     function ChangeLogo() {
         logoCount++;
         if (logoCount <= 3) {
@@ -37,10 +42,11 @@ function Images({ data, setData }) {
 
     return (
         <div>
-
+            {console.log("Level11", count)}
             <div style={style.flex}>
                 <div style={style.inner}>
-                    <h1>Image{count}</h1>
+                    <h1>Img:{count}</h1>
+                    <h1>MyCount:{myCount}</h1>
                     <img src={image} alt="Image1" style={style.img} />
                 </div>
                 <div style={style.inner}>
